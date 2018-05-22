@@ -112,11 +112,11 @@ $(document).ready(function () {
 });
 
 // script for project button
-$(document).ready(function () {
-  $(".polaroid-r, .polaroid-l").click(function () {
+function projectOverlay () {
+  $(".polaroid-r, .polaroid-l").on('click', function () {
     $(".project-screen").addClass('active')
   });
-});
+};
 
 $(document).ready(function () {
   $(".project-overlay").click(function () {
@@ -176,3 +176,23 @@ $(document).ready(function () {
     }
   });
 });
+
+
+const project_json = [{
+  title: "Ruby Zombie Run",
+  image: 'zmedbattle.png'
+}]
+
+function projectsDisplay() {
+  let array = project_json
+  for (project of array) {
+    $('.polaroids-t').append(`<div class="polaroid-l">
+      <div class="polaroid-pin"></div>
+      <div class = "polaroid-img"
+      style = "background-image: url('assets/${project.image}');" >
+      </div>
+      <p class="texta">${project.title}</p>
+    </div>`)
+    projectOverlay()
+  }
+}
