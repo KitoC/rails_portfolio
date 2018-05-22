@@ -1,0 +1,179 @@
+
+
+
+
+
+.button-tile{
+  align-self: flex-start;
+  @include w-h(3.2rem, 3.2rem);
+  cursor: pointer;
+  border-radius: 27.5%;
+  margin: 2.2%;
+  // Media-queries
+  @include breakpoint($phone_plus-size){
+    @include w-h(5.2rem, 5.2rem);
+  }
+  @include breakpoint($phone_normal){
+    @include w-h(4.7rem, 4.7rem);
+  }
+  @include breakpoint($phone_5){
+    @include w-h(4rem, 4rem);
+  }
+}
+
+.menu-buttons{
+  @include flex(flex-start, null, wrap);
+  height: 100%;
+  width: 100%;
+  padding-top: 8%;
+  padding-bottom: 3%;
+  padding-left: 1%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+}
+.bottom-tiles{
+  align-self: flex-end;
+  position: relative;
+  p{
+    font-size: 0.65rem;
+    color: white;
+    position: absolute;
+    bottom: -25%;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.iconSVG-hidden{
+  display: hidden;
+  opacity: 0;
+}
+
+.gallery{
+  background: white;
+  z-index: 10;
+  @include bg-image('gallery.png', center, center);
+  background-size: 80% 80%;
+}
+.linkedin{
+  background: #0077b5;
+  z-index: 10;
+  @include bg-image('linkedin.png', center, center);
+  background-size: 80% 80%;
+
+  a{
+    @include w-h(100%,100%);
+    z-index: 15;
+    display: block;
+  }
+}
+.github{
+  background: rgb(51, 51, 51);
+  z-index: 10;
+  @include bg-image('github.png', center, center);
+  background-size: 80% 80%;
+
+  a{
+    @include w-h(100%,100%);
+    z-index: 15;
+    display: block
+  }
+}
+.facebook{
+  background: #31518c;
+  z-index: 10;
+  @include bg-image('facebook.png', 85%, 100%);
+  background-size: 80% 80%;
+
+  a{
+    @include w-h(100%,100%);
+    z-index: 15;
+    display: block
+  }
+}
+
+.about-icon{
+  @include w-h(100%,100%);
+  @include flex(space-between, center);
+}
+.img-icon{
+  width: 75%;
+  padding: 5.9px;
+
+  @include breakpoint($phone_plus-size){
+    padding: 12%;
+    padding-top: 12.5%;
+  }
+}
+.img-icon-fb
+{
+  width: 75%;
+  padding-top: 0.75em;
+  padding-left: 0.70em;
+
+  @include breakpoint($phone_plus-size){
+    padding-top: 25%;
+    padding-left: 25%;
+  }
+}
+.iconSVG{
+font-size: 2.05em;
+
+  @include breakpoint($phone_plus-size){
+    font-size: 3.4em;
+  }
+  @include breakpoint($phone_normal){
+    font-size: 3.1em;
+  }
+  @include breakpoint($phone_5){
+    font-size: 2.6em;
+  }
+}
+
+.blur_effect{
+ display: block;
+ filter: blur(15px);
+ opacity: 0.95;
+ @include w-h(100%,4.4rem);
+ @include bg-image('Alpine2.jpg', center, bottom);
+}
+.blur_bg{
+  display: block;
+  background-color: lightblue;
+  @include w-h(100%,4.4rem);
+  margin: 0px 0px;
+  bottom: 0%;
+  position:absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.contact{
+  cursor: pointer;
+  background: #26cf42;
+  color: white;
+  z-index: 10;
+}
+.email{
+  cursor: pointer;
+  background: #26cf42;
+  color: white;
+  z-index: 10;
+}
+.about{
+  cursor: pointer;
+  background: #26cf42;
+  color: white;
+  z-index: 10;
+  @include bg-image('inote.png', center, center);
+  background-size: 100% 100%;
+}
+.portfolio{
+  cursor: pointer;
+  background: #26cf42;
+  background: rgb(51, 51, 51);
+  color: rgb(255, 255, 179);
+  z-index: 10;
+}

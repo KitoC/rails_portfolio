@@ -1,0 +1,245 @@
+/* gallery START */
+
+
+
+.headGrid-gallery {
+  position: absolute;
+  @include battery;
+}
+
+.bbg {
+  align-self: center;
+  padding: 2px;
+  height: 30%;
+  width: 50%;
+  border-radius: 3px;
+  border: 1px solid #908d8c;
+  position: relative;
+  z-index: 10;
+}
+
+.bbg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: black;
+  border-radius: 1px;
+  z-index: -1;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  left: 1px;
+}
+
+.beg {
+  align-self: center;
+  width: 3.75%;
+  height: 20%;
+  background-color: #908d8c;
+  margin-right: 5%;
+  margin-left: 1.75%;
+  margin-top: 1.5%;
+  display: inline-block;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.black {
+  color: black;
+}
+
+.topicons {
+  height: 16vw;
+  color: #007aff;
+  display: inline-flex;
+  justify-content: space-between;
+  height: auto;
+  width: 92%;
+  padding: 0.5em 4%;
+  background-color: #f9f9f9;
+  position: absolute;
+  z-index: 10;
+  top: 4%;
+}
+
+.r-icons {
+  display: flex;
+}
+
+.plus {
+  @include w-h(0.9em, 0.9em);
+  @include bg-image('plus-sign.png', center, center);
+}
+
+.topicons p {
+  margin: 0px;
+}
+
+.S {
+  margin-right: 1em;
+}
+
+.album-word {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.7em;
+  background-color: #f9f9f9;
+  border-bottom: 0.5px solid grey;
+  width: 92%;
+  padding: 0 4.5%;
+  padding-bottom: 0.3em;
+  padding-top: 19.5%;
+}
+
+.album-word p {
+  margin: 0;
+}
+
+.albums {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-items: center;
+  color: black;
+  position: absolute;
+  top: 0;
+  width: 96%;
+  padding: 0 2%;
+  overflow: scroll;
+  margin-top: 40%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.album {
+  margin: 0.33em;
+}
+
+.album div {
+  background-color: #f0f0f0;
+  width: 7rem;
+  height: 7rem;
+  position: relative;
+  z-index: 10;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.album-img {
+  @include bg-image('place1.jpg', center, center);
+}
+
+.album h4 {
+  text-align: left;
+  margin: 0.2em;
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+.album p {
+  text-align: left;
+  margin: 0.2em;
+  color: #909095;
+  font-size: 0.8em;
+}
+
+.album img {
+  justify-items: center;
+  height: 100%;
+  border: 0;
+}
+
+.h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60%;
+  background-color: #cccccc;
+  border-radius: 50vw;
+  @include bg-image('hidden.png', center, center);
+  background-size: 60% 60%;
+}
+
+.h img {
+  justify-items: center;
+  width: 60%;
+  height: 60%;
+}
+
+.bottombar {
+  display: flex;
+  justify-content: space-around;
+  height: 2.2rem;
+  bottom: 0;
+  width: 100%;
+  background-color: #f4f4f4;
+  position: absolute;
+  z-index: 100;
+  border-top: 0.5px solid grey;
+}
+
+.icons img,
+.iconsa img {
+  width: 1.1rem;
+  margin-bottom: 0;
+  margin-top: 0.2rem;
+}
+
+.icons,
+.iconsa {
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.icons p {
+  margin: 0;
+  color: #a1a1a1;
+  font-size: 0.6rem;
+  vertical-align: bottom;
+}
+
+.iconsa p {
+  margin: 0;
+  color: #007aff;
+  font-size: 0.6rem;
+}
+
+.bbphotos {
+  @include bg-image('bbphotos.png', center, center);
+  background-size: 60% 60%;
+  background-position: top;
+}
+
+.bbmemories {
+  @include bg-image('bbmemories.png', center, center);
+  background-size: 50%;
+  background-position: top;
+}
+
+.bbcloud {
+  @include bg-image('bbcloud.png', center, center);
+  background-size: 60% 60%;
+  background-position: top;
+}
+
+.bbgallery {
+  @include bg-image('bbgallery.png', center, center);
+  background-size: 60% 60%;
+  background-position: top;
+}
+
+/* gallery END */

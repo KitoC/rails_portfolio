@@ -1,0 +1,86 @@
+
+
+.headGrid-about
+{
+ @include battery;
+ position: fixed;
+ top: 59.5px;
+ background-color: $opaque_white;
+
+}
+.top_about
+{
+  @include flex(flex-start);
+  color: #e4af0a;
+  height: auto;
+  opacity: 0.99;
+  font-size: 0.8rem;
+  padding: 0 4%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 82.5px;
+  width: inherit;
+  background-color: $opaque_white;
+}
+.notes_about
+{
+  vertical-align: middle;
+  margin: 0;
+  margin-left: 0.3rem;
+  margin-top: 1%;
+}
+.icon-tb1
+{
+  @include bg-image('notes_people.png', center, center);
+  @include about-icons;
+  margin-left: auto;
+}
+.icon-tb2
+{
+  @include bg-image('notes_send.png', center, center);
+  @include about-icons;
+  margin-left: 0.7rem;
+}
+
+
+.about-main{
+}
+.about-main p
+{
+  width: 100%;
+  padding: 15% 4%;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 0.9em;
+}
+.phone
+{
+  position: relative;
+  display: block;
+  margin-left: 0.3rem;;
+  top: 13.5rem;
+  text-align: left;
+  border-bottom: 0.5px solid lightgrey;
+  color: #449dfd;
+}
+
+.black{
+  color: black;
+}
+footer{
+  width: inherit;
+}
+.bottombar-about
+{
+  @include flex(flex-start);
+  height: 2rem;
+  bottom: 64px;
+  width: inherit;
+  background-color: $opaque_white;
+  position: fixed;
+  z-index: 100;
+}
+
+.about-i{
+ @include w-h(1.5rem, 1.5rem);
+}

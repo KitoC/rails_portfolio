@@ -1,0 +1,180 @@
+/* contact START */
+
+.headGrid-contact {
+  @include battery;
+  background: #f9f9f9;
+}
+
+.top {
+  margin-top: 0;
+  @include flex(flex-start, center);
+  align-items: center;
+  background-color: #f9f9f9;
+  color: #449dfd;
+  font-size: 0.8rem;
+  padding: 4%;
+  padding-bottom: 2%;
+  /* top: 2rem; */
+}
+
+.arrow {
+  font-size: 0.8rem;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.cont {
+  text-align: left;
+  margin: 0;
+  margin-left: 0.15em;
+  line-height: 100%;
+  margin-top: 1%;
+}
+
+.edit {
+  text-align: right;
+  margin: 0;
+  margin-top: 1%;
+  line-height: 100%;
+  margin-left: auto;
+  margin-right: 0.9em;
+}
+
+.img-container {
+  @include flex(center, center);
+  background-color: #f9f9f9;
+}
+
+.img-contact {
+  width: 4rem;
+  height: 4rem;
+  background-color: #cccccc;
+  border-radius: 50%;
+  @include bg-image('place1.jpg', center, center);
+}
+
+.name-contact {
+  width: 100%;
+  background-color: #f9f9f9;
+  @include flex(center, center);
+}
+
+.name-contact h3 {
+  margin: 0.3rem 0;
+}
+
+.icons-contact {
+  @include flex(space-between);
+  padding: 0 15%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  border-bottom: 0.2px solid $border_grey;
+  div {
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.icon-contact {
+  width: 1.8rem;
+  height: 1.8rem;
+  top: 0.8rem;
+  background-color: #449dfd;
+  border-radius: 50%;
+  color: white;
+  @include flex(center, center);
+}
+
+.icont {
+  margin-top: 0.4rem;
+  ;
+  font-size: 0.5em;
+  top: 0.8rem;
+  color: $icon-grey;
+}
+
+.about-i-active {
+  color: #449dfd;
+}
+
+.main-contact {
+  margin-left: 1rem;
+}
+
+.contact-details {
+  display: block;
+  text-align: left;
+  border-bottom: 0.5px solid lightgrey;
+  color: #449dfd;
+  p {
+    margin: 0.35rem 0;
+    font-size: 0.8rem;
+    filter: blur(2px);
+  }
+  p:hover {
+    filter: blur(0);
+  }
+}
+
+.black {
+  color: black;
+}
+
+.bottombar-contact {
+  @include flex(space-between, flex-end);
+  padding: 0 5%;
+  box-sizing: border-box;
+  height: 2rem;
+  bottom: 0;
+  width: 100%;
+  background-color: $menu-grey;
+  position: absolute;
+  z-index: 100;
+  border-top: 0.5px solid $border_grey;
+  p {
+    margin: 0;
+  }
+}
+
+.icon-bb {
+  margin: 0.2rem auto;
+  width: 1rem;
+  height: 1rem;
+  top: 0.8rem;
+  color: $icon-grey;
+}
+
+.clock {
+  border-radius: 50%;
+  background-color: $icon-grey;
+  color: white;
+  @include w-h(100%, 100%);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.icon-bb-i {
+  margin: auto auto;
+  @include flex(center, center);
+  width: 1rem;
+  height: 1rem;
+  top: 0.8rem;
+  color: #cccccc;
+}
+
+.contact-people-i {
+  @include w-h(1.5rem, 1.5rem);
+  margin-bottom: 0.35rem;
+}
+
+.iconb {
+  margin-top: 1rem;
+  width: 2rem;
+  height: 2rem;
+  bottom: 0.8rem;
+  border-radius: 50vw;
+  background-color: #cccccc;
+}
+
+/* gallery END */

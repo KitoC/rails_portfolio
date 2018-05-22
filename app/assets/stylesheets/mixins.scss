@@ -1,0 +1,81 @@
+// width x height
+@mixin w-h($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// media-query
+@mixin breakpoint($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// Background image
+@mixin bg-image($url, $pos_x, $pos_y) {
+  background-image: image-url($url);
+  background-repeat: no-repeat;
+  background-position: $pos_x $pos_y;
+  background-size: cover;
+}
+
+// Flexbox generic
+@mixin flex($justify, $align:null, $wrap:null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Default box shadow
+@mixin default_shadow {
+  box-shadow: 2px 3px 7px grey;
+}
+
+// Animation mixin
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// Battrery top bar
+@mixin battery {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 0;
+  width: inherit;
+  height: 4%;
+  color: black;
+  z-index: 100;
+  top: 0;
+}
+
+// About icons
+@mixin about-icons {
+  margin-top: 0.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #fff;
+}

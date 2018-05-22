@@ -1,0 +1,88 @@
+/* Portfolio START */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.polaroid-heading{
+  width: 92.7%;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  position: sticky;
+  background-color: $manila-f;
+  z-index: 4;
+  box-sizing: border-box;
+  color: black;
+  text-align: center;
+  /* margin-right: 100px; */
+}
+.add-flex{
+  display: flex;
+}
+.polaroids{
+  @include flex(flex-start, null, nowrap);
+}
+@include keyframes(scale-up-l){
+  0% { transform: scale(1) rotate(-5deg);}
+  90% { }
+}
+@include keyframes(scale-up-r){
+  0% { transform: scale(1) rotate(5deg);}
+  90% { }
+}
+.polaroid-l{
+  position: relative;
+  @include w-h(100px, 135px);
+  background-color: white;
+  padding: 5px;
+  margin: 15px;
+  transform: rotate(-5deg);
+  @include default_shadow;
+  transition: 1.5s;
+  &:hover{
+    transition: 1.5s;
+    transform: scale(1.3) rotate(0);
+    z-index: 100;
+    cursor: pointer;
+  }
+}
+.polaroid-r{
+  position: relative;
+  @include w-h(100px, 135px);
+  background-color: white;
+  padding: 5px;
+  margin: 15px;
+  transform: rotate(5deg);
+  @include default_shadow;
+  transition: 1.5s;
+  &:hover{
+    transition: 1.5s;
+    transform: scale(1.3) rotate(0);
+    z-index: 100;
+    cursor: pointer;
+  }
+}
+.polaroid-img{
+  @include w-h(100px, 100px);
+  @include bg-image('Alpine2.jpg', center, center);
+}
+.polaroid-pin{
+  @include w-h(30px, 30px);
+  @include bg-image('pin.png', center, center);
+  position: absolute;
+  left: 45%;
+  top: -7.5%;
+}
+.texta{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 0.75em;
+  width: 100%;
+  text-align: center;
+  transform: rotate(-5deg);
+  position: absolute;
+  left: 0;
+  bottom: 7.5%;
+  line-height: 100%;
+}
+/* Portfolio END */
