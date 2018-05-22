@@ -19,62 +19,83 @@
 
 // Script for the live time at the top.
 function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    if (h > 12) {
-      h = h - 12
-      var p = "pm"
-    } else {
-      p = "am"
-    };
-    document.getElementById('time').innerHTML =
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  if (h > 12) {
+    h = h - 12
+    var p = "pm"
+  } else {
+    p = "am"
+  };
+  document.getElementById('time').innerHTML =
     h + ":" + m + p;
 
-    var t = setTimeout(startTime, 500);
-  }
+  var t = setTimeout(startTime, 500);
+}
+
 function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-  }
+  if (i < 10) {
+    i = "0" + i
+  }; // add zero in front of numbers < 10
+  return i;
+}
+
+let homeClick = false;
+
+function hintBox() {
+  setTimeout(function () {
+    if (!homeClick) {
+      $('.info-box').addClass('info-b-active')
+    }
+  }, 3000)
+}
+
+// if ($(document).width() >= 600) {
+//   $(".project-scr").addClass('not-phone');
+// }
 
 
 //  This is the script for the loading screen and home button function.
-showLoading = true;
-$(document).ready(function(){
-  $(".home").click(function(){
-    if (showLoading){
+let showLoading = true;
+$(document).ready(function () {
+  $(".home").click(function () {
+    homeClick = true;
+    if (showLoading) {
       $(".loading-screen").addClass('active');
       $(".bin").addClass('b');
       $(".n").addClass('name');
       $(".scroll").addClass('innerIam');
-      setTimeout(function() {
+      $(".info-box").removeClass('info-b-active')
+      setTimeout(function () {
         $(".home-screen").addClass('active');
         $(".loading-screen").removeClass('active');
         $(".headGrid").removeClass('batt_hide')
+
       }, 14000);
-    }
-   
-    else {
+    } else {
       $(".home-screen").addClass('active')
       $(".tag").removeClass('tag_show');
       $(".gallery-screen").removeClass('active')
       $(".about-screen").removeClass('active')
       $(".portfolio-screen").removeClass('active')
       $(".contact-screen").removeClass('active')
+      $(".project-screen").removeClass('active')
       $(".headGrid").removeClass('batt_black')
       $(".headGrid").removeClass('batt_hide')
-       if (orient === false) {
-         $('.center').addClass('portraitC');
-         $('.screen').addClass('portraitS');
-         $('.polaroid-container').removeClass('add-flex');
+      $(".info-box").removeClass('info-b-active')
 
-         orient = true
-       }
-   
+      if (orient === false) {
+        $('.center').addClass('portraitC');
+        $('.screen').addClass('portraitS');
+        $('.polaroid-container').removeClass('add-flex');
+
+        orient = true
+      }
+
 
     }
     showLoading = false;
@@ -82,17 +103,31 @@ $(document).ready(function(){
 });
 
 // script for gallery button
-$(document).ready(function(){
-  $(".gallery").click(function(){
+$(document).ready(function () {
+  $(".gallery").click(function () {
     $(".gallery-screen").addClass('active')
     $(".headGrid").addClass('batt_black')
     $(".home-screen").removeClass('active')
   });
 });
 
+// script for project button
+$(document).ready(function () {
+  $(".polaroid-r, .polaroid-l").click(function () {
+    $(".project-screen").addClass('active')
+  });
+});
+
+$(document).ready(function () {
+  $(".project-overlay").click(function () {
+    $(".project-screen").removeClass('active')
+  });
+});
+
+
 // script for portfolio button
-$(document).ready(function(){
-  $(".portfolio").click(function(){
+$(document).ready(function () {
+  $(".portfolio").click(function () {
     $(".portfolio-screen").addClass('active')
     $(".tag").addClass('tag_show');
     $(".headGrid").addClass('batt_black')
@@ -101,8 +136,8 @@ $(document).ready(function(){
 });
 
 // script for notes button
-$(document).ready(function(){
-  $(".about").click(function(){
+$(document).ready(function () {
+  $(".about").click(function () {
     $(".about-screen").addClass('active')
     $(".headGrid").addClass('batt_black')
     $(".homeS").removeClass('active')
@@ -110,8 +145,8 @@ $(document).ready(function(){
 });
 
 // script for contact details button
-$(document).ready(function(){
-  $(".contact").click(function(){
+$(document).ready(function () {
+  $(".contact").click(function () {
     $(".contact-screen").addClass('active')
     $(".headGrid").addClass('batt_black')
     $(".home-screen").removeClass('active')
@@ -120,8 +155,8 @@ $(document).ready(function(){
 
 // script for orientation button
 orient = true;
-$(document).ready(function(){
-  $(".tag").click(function(){
+$(document).ready(function () {
+  $(".tag").click(function () {
     if ((orient)) {
       $('.center').addClass('landscapeC');
       $('.screen').addClass('landscapeS');
@@ -129,14 +164,15 @@ $(document).ready(function(){
       $('.polaroid-container').addClass('add-flex');
       $('.center').removeClass('portraitC');
       $('.screen').removeClass('portraitS');
-      orient = false }
-   else {
-     $('.center').removeClass('landscapeC');
-     $('.screen').removeClass('landscapeS');
-     $(".headGrid").removeClass('batt_hide')
-     $('.polaroid-container').removeClass('add-flex');
-     $('.center').addClass('portraitC');
-     $('.screen').addClass('portraitS');
-      orient = true}
+      orient = false
+    } else {
+      $('.center').removeClass('landscapeC');
+      $('.screen').removeClass('landscapeS');
+      $(".headGrid").removeClass('batt_hide')
+      $('.polaroid-container').removeClass('add-flex');
+      $('.center').addClass('portraitC');
+      $('.screen').addClass('portraitS');
+      orient = true
+    }
   });
 });

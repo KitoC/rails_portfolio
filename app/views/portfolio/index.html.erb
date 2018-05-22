@@ -1,49 +1,14 @@
-<body onload="startTime()">
+<body onload="startTime(); hintBox();">
   <div class="center">
      <div class="mobile">
+     <div class="info-box">
+      </div>
        <div class="screen empty-screen">
        </div>
 <!-- Loading screen. -->
        <div class="screen loading-screen">
-
-         <div class="binarygrid">
-         <div class="binary">
-           <h2 class="n k m">K</h2>
-           <h2 class="bin k">01001011</h2>
-           <h2 class="n i">I</h2>
-           <h2 class="bin i">01101001</h2>
-           <h2 class="n t">T</h2>
-           <h2 class="bin t">01110100</h2>
-           <h2 class="n o">O</h2>
-           <h2 class="bin o">01101111</h2>
-         </div>
-         <div class="binarylast">
-           <h2 class="n c">C</h2>
-           <h2 class="bin c">01000011</h2>
-           <h2 class="n l">L</h2>
-           <h2 class="bin l">01101100</h2>
-           <h2 class="n a">A</h2>
-           <h2 class="bin a">01100001</h2>
-           <h2 class="n r">R</h2>
-           <h2 class="bin r">01110010</h2>
-           <h2 class="n bro">K</h2>
-           <h2 class="bin bro">01101011</h2>
-         </div>
-
-         <div class="Iam">
-           <b>
-              <div class="scroll">
-               web developer.<br />
-               programmer.<br />
-               creative.<br />
-               entrepreneur.<br />
-               kinda cool guy.
-               </div>
-          </b>
-        </div>
+        <%= render 'loading'  %>
        </div>
-
-      </div>
 <!-- Home screen. -->
 
 <div class="headGrid batt_hide">
@@ -73,6 +38,10 @@
           <%= render 'contact'  %>
         </div>
 
+         <div class="screen project-screen">
+          <%= render 'project'  %>
+        </div>
+
        </div>
 
        <div class="home"></div>
@@ -89,12 +58,14 @@
        </ul>
        <div class="tag"></div>
       </div>
+      
 </div>
 
 <script>
 if ($(document).width() <= 600) {
   $(".home-screen").addClass('active');
   }
+  
 // if ($(document).width() <= 600) {
 //   setTimeout(function() {
 //     $(".loading-screen").addClass('active');

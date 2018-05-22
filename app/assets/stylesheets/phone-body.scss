@@ -166,8 +166,22 @@ body {
   display: block;
 }
 
+.info-box{
+  display: none;
+  position: absolute;
+  top: 60%;
+  right: -170px;
+  z-index: 200;
+  transform: rotate(20deg);
+  @include bg-image('home-hint.png', center, center);
+  padding: 10px;
+  border-radius: 5px;
+  @include w-h(150px, 150px);
+}
+.info-b-active{
+  display: block;
+}
 /* Phone styling END */
-
 
 /* Different screens */
 
@@ -181,6 +195,13 @@ body {
 .loading-screen {
   display: none;
   z-index: 1;
+}
+
+.project-screen {
+  display: none;
+  z-index: 1;
+  background-color: $project_white;
+  width: 200%;
 }
 
 .gallery-screen {
@@ -309,8 +330,6 @@ div.time {
 
 /*  LOADING SCREEN animation  */
 
-#loadingscreen {}
-
 .binarygrid {
   display: grid;
   grid-template-rows: 20px 20px;
@@ -345,12 +364,12 @@ h2 {
   margin-right: 0 0;
   margin-left: 0 0;
   letter-spacing: .15em;
-  animation: typing 0.25s steps(30, end), blink-caret 0.1s step-end infinite;
+  animation: typing 0.5s steps(30, end), blink-caret 0.1s step-end infinite;
   animation-fill-mode: forwards;
 }
 
 .name {
-  animation: name 0.25s;
+  animation: name 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -468,7 +487,8 @@ main {
   margin-top: 1em;
   margin-left: 2.2em;
   padding: 2em auto;
-  font: normal 20px/30px monospace, serif;
+  font: normal 20px/30px monospace;
+  letter-spacing: 2px;
   text-transform: capitalize;
   color: #999;
   line-height: 50px;
