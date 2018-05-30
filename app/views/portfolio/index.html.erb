@@ -1,6 +1,6 @@
 <body onload="startTime(); hintBox(); projectsDisplay();">
   <div class="center">
-     <div class="mobile">
+     <div id="folio"  class="mobile">
      <div class="info-box">
       </div>
        <div class="screen empty-screen">
@@ -11,13 +11,13 @@
        </div>
 <!-- Home screen. -->
 
-<div class="headGrid batt_hide">
+<div class="headGrid hide">
   <div class="cell"></div>
   <div><div id="time" class="time"></div></div>
   <div class="battery"><div class="percent">100%</div><div class="bb">
   </div><div class="be"></div></div>
 </div>
-<div class="screen home-screen ">
+<div class="screen home-screen">
            <%= render 'home'  %>
          </div>
 <!-- Gallery(photos) screen. -->
@@ -26,7 +26,7 @@
          </div>
 
 <!-- Portfolio screen. -->
-         <div class="screen portfolio-screen">
+         <div  class="screen portfolio-screen">
            <%= render 'portfolio'  %>
          </div>
 <!-- About screen. -->
@@ -41,7 +41,7 @@
          <div class="screen project-screen">
           <%= render 'project'  %>
         </div>
-
+      
        </div>
 
        <div class="home"></div>
@@ -64,6 +64,8 @@
 <script>
 if ($(document).width() <= 600) {
   $(".home-screen").addClass('active');
+  $(".headGrid").removeClass('hide');
+  // $(".info-box").removeClass('info-b-active');  
   }
   
 // if ($(document).width() <= 600) {
@@ -79,5 +81,11 @@ if ($(document).width() <= 600) {
 //       }, 16000);
 // }
 </script>
+
+
+
+
+
+
 
 </body>

@@ -7,7 +7,7 @@
 
 .top {
   margin-top: 0;
-  @include flex(flex-start, center);
+  @include flex-a-items(flex-start, center);
   align-items: center;
   background-color: #f9f9f9;
   color: #449dfd;
@@ -41,7 +41,7 @@
 }
 
 .img-container {
-  @include flex(center, center);
+  @include flex-a-items(center, center);
   background-color: #f9f9f9;
 }
 
@@ -56,7 +56,7 @@
 .name-contact {
   width: 100%;
   background-color: #f9f9f9;
-  @include flex(center, center);
+  @include flex-a-items(center, center);
 }
 
 .name-contact h3 {
@@ -64,7 +64,7 @@
 }
 
 .icons-contact {
-  @include flex(space-between);
+  @include flex-a-items(space-between);
   padding: 0 15%;
   box-sizing: border-box;
   background-color: #f9f9f9;
@@ -83,7 +83,7 @@
   background-color: #449dfd;
   border-radius: 50%;
   color: white;
-  @include flex(center, center);
+  @include flex-a-items(center, center);
 }
 
 .icont {
@@ -122,7 +122,7 @@
 }
 
 .bottombar-contact {
-  @include flex(space-between, flex-end);
+  @include flex-a-items(space-between, flex-end);
   padding: 0 5%;
   box-sizing: border-box;
   height: 2rem;
@@ -156,7 +156,7 @@
 
 .icon-bb-i {
   margin: auto auto;
-  @include flex(center, center);
+  @include flex-a-items(center, center);
   width: 1rem;
   height: 1rem;
   top: 0.8rem;

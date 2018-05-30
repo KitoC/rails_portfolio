@@ -19,12 +19,16 @@
   /* margin-right: 100px; */
 }
 
+.polaroid-box {
+  margin-bottom: 20px;
+}
+
 .add-flex {
   display: flex;
 }
 
 .polaroids-t {
-  @include flex(flex-start, null, nowrap);
+  @include flex(flex-start, null, wrap); // flex-direction: column;
 }
 
 .polaroids-b {
@@ -45,13 +49,12 @@
   90% {}
 }
 
-.polaroid-l {
+.polaroid {
   position: relative;
-  @include w-h(100px, 135px);
+  @include w-h(90px, 125px);
   background-color: white;
   padding: 5px;
-  margin: 15px;
-  transform: rotate(-5deg);
+  margin: 13.5px;
   @include default_shadow;
   transition: 1.5s;
   z-index: 90;
@@ -61,28 +64,16 @@
     z-index: 100;
     cursor: pointer;
   }
-}
-
-.polaroid-r {
-  position: relative;
-  @include w-h(100px, 135px);
-  background-color: white;
-  padding: 5px;
-  margin: 15px;
-  transform: rotate(5deg);
-  @include default_shadow;
-  transition: 1.5s;
-  z-index: 90;
-  &:hover {
-    transition: 1.5s;
-    transform: scale(1.3) rotate(0);
-    z-index: 100;
-    cursor: pointer;
+  &.right {
+    transform: rotate(5deg);
+  }
+  &.left {
+    transform: rotate(-5deg);
   }
 }
 
 .polaroid-img {
-  @include w-h(100px, 100px);
+  @include w-h(90px, 90px);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; // @include bg-image('Alpine2.jpg', center, center);
@@ -108,4 +99,19 @@
   line-height: 100%;
 }
 
+.tech-stack {
+  padding: 0 10%;
+  @include flex(space-between);
+  flex-wrap: wrap;
+  
+}
+.ts-image{
+  @include w-h(43.2px, 20px);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+// .ts-img-container{
+//   @include w-h()
+// }
 /* Portfolio END */

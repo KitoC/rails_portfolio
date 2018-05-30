@@ -1,28 +1,37 @@
-
-
-
-
-
-.button-tile{
-  align-self: flex-start;
+.button-tile {
+  // align-self: flex-start;
   @include w-h(3.2rem, 3.2rem);
   cursor: pointer;
   border-radius: 27.5%;
-  margin: 2.2%;
-  // Media-queries
-  @include breakpoint($phone_plus-size){
+  margin: 2.2%; // Media-queries
+  position: relative;
+  margin-bottom: 15px;
+  @include breakpoint($phone_plus-size) {
     @include w-h(5.2rem, 5.2rem);
+    margin-bottom: 25px;
   }
-  @include breakpoint($phone_normal){
-    @include w-h(4.7rem, 4.7rem);
+  @include breakpoint($phone_normal) {
+    @include w-h(4.7rem, 4.7rem); // margin-bottom: 15px;
   }
-  @include breakpoint($phone_5){
-    @include w-h(4rem, 4rem);
+  @include breakpoint($phone_5) {
+    @include w-h(4rem, 4rem); // margin-bottom: 15px;
+  }
+  p {
+    font-size: 0.65rem;
+    color: white;
+    position: absolute;
+    bottom: -30%;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    @include breakpoint($phone_plus-size) {
+      font-size: 0.95rem
+    }
   }
 }
 
-.menu-buttons{
-  @include flex(flex-start, null, wrap);
+.menu-buttons {
+  @include flex(flex-start, flex-start, wrap);
   height: 100%;
   width: 100%;
   padding-top: 8%;
@@ -32,140 +41,272 @@
   position: absolute;
   top: 0;
 }
-.bottom-tiles{
-  align-self: flex-end;
-  position: relative;
-  p{
-    font-size: 0.65rem;
-    color: white;
-    position: absolute;
-    bottom: -25%;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
+
+.main-menu-tiles {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  height: 4.5rem;
+  @include breakpoint($phone_plus-size) {
+    height: 7.3rem;
+  }
+  @include breakpoint($phone_normal) {
+    height: 6.6rem;
+  }
+  @include breakpoint($phone_5) {
+    height: 5.6rem;
   }
 }
 
-.iconSVG-hidden{
+.bottom-tiles {
+  position: relative;
+}
+
+.projects {
+  // position: absolute;
+  // top: 20%;
+  background: $opaque_white2;
+  transition: 0.3s;
+}
+
+.projects-active {
+  cursor: default;
+  @include w-h(12rem, 12rem);
+  transform: translate(25px, 40px); // left: 9%;
+  // top: 30%;
+  border-radius: 15%;
+  z-index: 90;
+  @include breakpoint($phone_plus-size) {
+    @include w-h(20rem, 20rem);
+    transform: translate(35px, 40px);
+  }
+  @include breakpoint($phone_normal) {
+    @include w-h(17.5rem, 17.5rem);
+    transform: translate(35px, 40px);
+  }
+  @include breakpoint($phone_5) {
+    @include w-h(14.5rem, 14.5rem);
+    transform: translate(35px, 40px);
+  }
+}
+
+.project-tiles {
+  @include w-h(28%, 28%); // cursor: pointer;
+  margin: 2.5%;
+  background: #26cf42;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  p{
+    display: none;
+    font-size: 50%;
+  }
+}
+
+.project-b-overlay {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+.home-projects-active {
+  z-index: 100;
+  p {
+    display: block;
+  }
+}
+
+.home-projects {
+  position: absolute;
+  padding: 10%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  @include flex(flex-start, flex-start, wrap);
+}
+
+.tile-title {
+  text-align: center;
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 15%;
+  font-size: 1.3rem;
+  transition: 0.3s;
+  z-index: 90;
+  opacity: 0;
+  @include breakpoint($phone_plus-size){
+    font-size: 1.8rem;
+  }
+  // display: none;
+}
+
+.tt-show {
+  z-index: 90;
+  opacity: 1;
+  // display: block;
+}
+
+.iconSVG-hidden {
   display: hidden;
   opacity: 0;
 }
 
-.gallery{
+.gallery {
   background: white;
   z-index: 10;
   @include bg-image('gallery.png', center, center);
   background-size: 80% 80%;
 }
-.linkedin{
+
+.linkedin {
   background: #0077b5;
   z-index: 10;
   @include bg-image('linkedin.png', center, center);
   background-size: 80% 80%;
-
-  a{
-    @include w-h(100%,100%);
+  a {
+    @include w-h(100%, 100%);
     z-index: 15;
     display: block;
   }
 }
-.github{
+
+.github {
   background: rgb(51, 51, 51);
   z-index: 10;
   @include bg-image('github.png', center, center);
   background-size: 80% 80%;
-
-  a{
-    @include w-h(100%,100%);
+  a {
+    @include w-h(100%, 100%);
     z-index: 15;
     display: block
   }
 }
-.facebook{
+
+.facebook {
   background: #31518c;
   z-index: 10;
   @include bg-image('facebook.png', 85%, 100%);
   background-size: 80% 80%;
-
-  a{
-    @include w-h(100%,100%);
+  a {
+    @include w-h(100%, 100%);
     z-index: 15;
     display: block
   }
 }
 
-.about-icon{
-  @include w-h(100%,100%);
+.about-icon {
+  @include w-h(100%, 100%);
   @include flex(space-between, center);
 }
-.img-icon{
+
+.img-icon {
   width: 75%;
   padding: 5.9px;
-
-  @include breakpoint($phone_plus-size){
+  @include breakpoint($phone_plus-size) {
     padding: 12%;
     padding-top: 12.5%;
   }
 }
-.img-icon-fb
-{
+
+.img-icon-fb {
   width: 75%;
   padding-top: 0.75em;
   padding-left: 0.70em;
-
-  @include breakpoint($phone_plus-size){
+  @include breakpoint($phone_plus-size) {
     padding-top: 25%;
     padding-left: 25%;
   }
 }
-.iconSVG{
-font-size: 2.05em;
 
-  @include breakpoint($phone_plus-size){
+.iconSVG {
+  font-size: 2.05em;
+  @include breakpoint($phone_plus-size) {
     font-size: 3.4em;
   }
-  @include breakpoint($phone_normal){
+  @include breakpoint($phone_normal) {
     font-size: 3.1em;
   }
-  @include breakpoint($phone_5){
+  @include breakpoint($phone_5) {
     font-size: 2.6em;
   }
 }
 
-.blur_effect{
- display: block;
- filter: blur(15px);
- opacity: 0.95;
- @include w-h(100%,4.4rem);
- @include bg-image('Alpine2.jpg', center, bottom);
-}
-.blur_bg{
+.blur_effect {
   display: block;
-  background-color: lightblue;
-  @include w-h(100%,4.4rem);
-  margin: 0px 0px;
-  bottom: 0%;
-  position:absolute;
-  z-index: 1;
-  overflow: hidden;
+  filter: blur(15px);
+  opacity: 0.95;
+  @include w-h(100%, 4.4rem);
+  @include bg-image('Alpine2.jpg', center, bottom);
+  @include breakpoint($phone_plus-size) {
+    height: 7rem;
+  }
+  @include breakpoint($phone_normal) {
+    height: 6.5rem;
+  }
+  @include breakpoint($phone_5) {
+    height: 5.5rem;
+  }
 }
 
-.contact{
+.blur_bg {
+  display: block;
+  background-color: lightblue;
+  @include w-h(100%, 4.4rem);
+  margin: 0px 0px;
+  bottom: 0%;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  @include breakpoint($phone_plus-size) {
+    height: 7rem;
+  }
+  @include breakpoint($phone_normal) {
+    height: 6.5rem;
+  }
+  @include breakpoint($phone_5) {
+    height: 5.5rem;
+  }
+}
+
+.full-bg-blur {
+  // margin-left: -1.5%;
+  // margin-top: -1.5%; 
+  // margin: -5px -10px -10px -5px;
+  z-index: 80;
+  @include bg-image('menu-bg.png', center, center);
+  background-size: 100% 100%;
+  position: absolute;
+  @include w-h(100%, 100%); // backdrop-filter: blur(10px);
+  display: none;
+  transition: 2s;
+}
+
+.bg-blur-active {
+  filter: blur(3.5px);
+  display: block;
+}
+
+.contact {
   cursor: pointer;
   background: #26cf42;
   color: white;
   z-index: 10;
 }
-.email{
+
+.email {
   cursor: pointer;
   background: #26cf42;
   color: white;
   z-index: 10;
   @include bg-image('message-bubble.png', center, center);
   background-size: 75%;
-
 }
-.about{
+
+.about {
   cursor: pointer;
   background: #26cf42;
   color: white;
@@ -173,7 +314,8 @@ font-size: 2.05em;
   @include bg-image('inote.png', center, center);
   background-size: 100% 100%;
 }
-.portfolio{
+
+.portfolio {
   cursor: pointer;
   background: #26cf42;
   background: rgb(51, 51, 51);

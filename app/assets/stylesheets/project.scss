@@ -1,4 +1,104 @@
-.project-overlay{
+.project-overlay {
     @include w-h(100%, 100%);
-    opacity: 0.5;
+    background-color: $project_bg;
+    p {
+        margin: 0;
+    }
+}
+
+.project-images {
+    // @include w-h(100%, 100%);
+    // background-color: $project_bg;
+    position: relative;
+    // @include flex(center); // margin: 0 3.5%;
+    display: flex;
+    // position: absolute;
+    // top: 5%;
+    height: 43%;
+    width: inherit; // overflow-x: scroll;
+    transition: 2s;
+}
+
+.project-close-b {
+    // position: absolute;
+    color: white; // top: 0;
+    // right: 2%;
+    // height: 5%;
+    font-size: 2rem;
+    z-index: 200;
+    text-align: right;
+    padding: 0 5px;
+}
+
+.lge-project-frame {
+    position: relative;
+    @include w-h(150px, 185px);
+    background-color: white;
+    padding: 5px;
+    margin: 0 15px;
+    @include default_shadow;
+    transition: 1.5s;
+    z-index: 90;
+}
+
+.lge-project-img {
+    @include w-h(150px, 150px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.right-f {
+    justify-content: flex-end;
+    color: black;
+}
+
+.left-f {
+    justify-content: flex-start;
+    color: black;
+}
+
+.middle-f {
+    justify-content: center;
+    color: black;
+}
+
+.image-dir {
+    @include flex(space-around);
+    color: white;
+    font-size: 2em;
+    padding: 0 30%;
+    p {
+        cursor: pointer;
+    }
+}
+
+.project-text {
+    // position: absolute;
+    // bottom: -5%;
+    height: 40%;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+    overflow: scroll;
+    p {
+        width: 100%;
+        word-wrap: break-word;
+    }
+}
+
+.project-link {
+    color: white;
+}
+
+.project-link:visited {
+    color: white;
+}
+
+.project-description {
+    color: white;
+}
+
+.hide {
+    display: none;
 }

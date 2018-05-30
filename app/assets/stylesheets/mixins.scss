@@ -23,10 +23,16 @@
 @mixin flex($justify, $align:null, $wrap:null) {
   display: flex;
   justify-content: $justify;
+  align-content: $align;
+  flex-wrap: $wrap;
+}
+// Flexbox generic
+@mixin flex-a-items($justify, $align:null, $wrap:null) {
+  display: flex;
+  justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
 }
-
 // Default box shadow
 @mixin default_shadow {
   box-shadow: 2px 3px 7px grey;
